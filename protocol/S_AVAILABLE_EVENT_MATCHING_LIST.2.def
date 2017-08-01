@@ -7,7 +7,7 @@ offset dailyRewards
 count  weeklyRewards
 offset weeklyRewards
 
-int32  callMethod
+int32  lastProgress
 # When logging in for the first time of the day, the game will
 # send a packet with the last progress you had of the day you
 # were last logged in. In that case this field will be 0.
