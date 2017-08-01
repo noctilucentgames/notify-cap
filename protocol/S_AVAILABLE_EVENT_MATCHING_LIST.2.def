@@ -7,12 +7,12 @@ offset dailyRewards
 count  weeklyRewards
 offset weeklyRewards
 
-int32  lastProgress
+int32  callMethod
 # When logging in for the first time of the day, the game will
 # send a packet with the last progress you had of the day you
 # were last logged in. In that case this field will be 0.
-# In all other cases, this field will be -1.
-# Probably the game uses this to notify a reset.
+# When the list is called by opening the vg window : 1
+# Otherwise : -1 
 
 int32  dailyCount	# all : party + pvp + solo
 int32  dailyPartyCount
