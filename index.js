@@ -21,7 +21,7 @@ module.exports = function notifyCap(dispatch) {
     }
 
     dispatch.hook('S_AVAILABLE_EVENT_MATCHING_LIST', 2, event => {
-        if (!vgCooldown && (event.lastProgress == -1 || event.lastProgress == 1) && event.vgCredits > 7000) {
+        if (!vgCooldown && (event.callMethod == -1 || event.callMethod == 1) && event.vgCredits > 7000) {
             vgCooldown = true
             msg.notify('WARNING: VG credits almost capped (' + event.vgCredits + '/9000)', 44)
             vgTimer = setTimeout(function () { vgCooldown = false }, 20000)
