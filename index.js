@@ -3,16 +3,11 @@ module.exports = function notifyCap(dispatch) {
     const msg = new (require('../../cat_utils/message.js'))(dispatch, 'notify', '#ffffff')
     const inv = new (require('../../cat_utils/inventory.js'))(dispatch, notifyInventory)
     const ploc = new (require('../../cat_utils/playerLocation.js'))(dispatch)
-    // chat.add('notify test', test)
-    // chat.add('notify stop', stop)
 
     var vgCooldown = false
     var vgTimer = null
     var markCooldown = false
     var markTimer = null
-
-    var timer = null
-    var style = 0
 
     function notifyInventory() {
         if (!markCooldown) {
@@ -32,37 +27,4 @@ module.exports = function notifyCap(dispatch) {
             vgTimer = setTimeout(function () { vgCooldown = false }, 20000)
         }
     });
-
-    // dispatch.hook('S_DUNGEON_GUIDE_ON', 1, event => {
-    //     console.log("cancel guide")
-    //     return false
-    // })
-
-    // // dispatch.hook('S_DUNGEON_UI_HIGHLIGHT', 1, event => {
-    // //     console.log("cancel ui")
-    // //     return false
-    // // })
-
-    // dispatch.hook('S_DUNGEON_VEHICLE_REPAIRABLE', 1, event => {
-    //     return false
-    // })
-
-    // dispatch.hook('S_CAN_DUNGEON_RETRY', 1, event => {
-    //     return false
-    // })
-
-    // function test() {
-    //     msg.notify('test: ' + style, style)
-    //     style++
-    //     timer = setTimeout(test, 1000)
-    // }
-    // function stop() {
-    //     clearTimeout(timer)
-    //     style = 0
-    // }
-
-
-
-
-
 }
