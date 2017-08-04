@@ -1,8 +1,8 @@
 module.exports = function notifyCap(dispatch) {
-    const chat = new (require('../../cat_utils/chatCommands.js'))(dispatch)
-    const msg = new (require('../../cat_utils/message.js'))(dispatch, 'notify', '#ffffff')
-    const inv = new (require('../../cat_utils/inventory.js'))(dispatch, notifyInventory)
-    const ploc = new (require('../../cat_utils/playerLocation.js'))(dispatch)
+    const chat = new (require('./lib/chatCommands.js'))(dispatch)
+    const msg = new (require('./lib/message.js'))(dispatch, 'notify', '#ffffff')
+    const inv = new (require('./lib/inventory.js'))(dispatch, notifyInventory)
+    const ploc = new (require('./lib/playerLocation.js'))(dispatch)
 
     var vgCooldown = false
     var vgTimer = null
